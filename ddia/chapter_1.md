@@ -48,3 +48,21 @@ As humans tend to make errors, here are some ways to avoid it:
 - Unit tests and integration tests in the entire system
 - Quick and easy recovery from human errors, fast rollback of config changes, roll out new code gradually to lessen possible negative impact
 - Detailed and clear monitoring, such as performance metrics and error rates. This is referred to as telemetry.
+
+## Scalability
+Scalability is the term we use to describe a system's ability to cope with increased load.
+
+#### Describing Load
+Before we determine if a system is scalable, we need to describe its load. Load can be described through *load parameters*. The best parameters depend on the architecure of your system. Here are following examples:
+- Requests per second to a web-server
+- Ratio of reads to writes in a database
+- Number of simultaneously active users in a chat room
+- Hit rate on a cache
+
+#### Describing Performance
+Once you have described the load on your system, you can investigate what happens when the load increases. You can look at it in two ways:
+- When you increase a load parameter and keep the system resources (CPU, memory, network bandwidth) unchanged, how is the performance in your system affected?
+- When you increase a load parameter, how much do you need to increase the resource if you want to keep performance unchanged.
+
+#### Approaches for Coping with Load
+In handling different types of load to maintain good performance, it is best to have multiple approaches depending on the requirements of the system. People often talk of a dichotomy between scaling up (more powerful machine) and scaling out (distributing load across multiple smaller machines). However, there is no scalable architecture that fits all systems.
